@@ -1,0 +1,9 @@
+[Unit]
+Description=set resolv.conf
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/set-resolv-conf
+
+[Install]
+WantedBy=multi-user.target
