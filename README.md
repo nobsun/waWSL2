@@ -2,9 +2,9 @@
 
 0. WSLのアップデート
 1. `nkf` をインストール
-```
-sudo apt install nkf
-```
+    ```
+    sudo apt install nkf
+    ```
 2. `wsl.conf` を `/etc/` にコピー
     ```
     sudo cp wsl.conf /etc/
@@ -23,4 +23,3 @@ sudo apt install nkf
     sudo systemctl enable set-resolv-conf
     ```
 6. WSLの再起動
-
