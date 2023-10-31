@@ -1,2 +1,3 @@
 #!/bin/bash
-/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//powershell.exe -Command "Get-DnsClientServerAddress -InterfaceAlias Wi-Fi -AddressFamily IPv4 | Select-Object -ExpandProperty ServerAddresses" | nkf -w -Lu | sed -e 's/^/nameserver /' > /etc/resolv.conf
+name=`/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//powershell.exe -Command "Get-NetAdapter | Where-Object Status -eq Up | Select-Object -ExpandProperty Name" | nkf -w -Lu`
+/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//powershell.exe -Command "Get-DnsClientServerAddress -InterfaceAlias '${name}' -AddressFamily IPv4 | Select-Object -ExpandProperty ServerAddresses" | nkf -w -Lu | sed -e 's/^/nameserver /'  > /etc/resolv.conf
